@@ -15,11 +15,11 @@ public class IOClient {
                         socket.getOutputStream().write((new Date() + ": hello world").getBytes());
                         Thread.sleep(2000);
                     } catch (Exception e) {
-
+                        //no-op
                     }
                 }
             } catch (IOException e) {
-
+                //no-op
             }
         }).start();
     }

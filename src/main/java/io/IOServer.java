@@ -29,11 +29,12 @@ public class IOServer {
                                 System.out.println(new String(data, 0, len));
                             }
                         } catch (IOException e) {
-                            //TODO
+                            //no-op
                         }
                     }).start();
 
                 } catch (IOException e) {
+                    //no-op
                 }
 
             }
