@@ -70,6 +70,4 @@ public class SocketDemoClient {
         socketPrintStream.close();
         socketBufferedReader.close();
     }
-
-
 }
