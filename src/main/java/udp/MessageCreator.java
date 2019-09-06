@@ -1,8 +1,9 @@
 package udp;
 
 public class MessageCreator {
-    private static final String SN_HEADER = "收到暗号，我是（SN）:";
-    private static final String PORT_HEADER = "这是暗号，请回电端口（Port）:";
+
+    private static final String SN_HEADER = "收到暗号，我是（SN）：";
+    private static final String PORT_HEADER = "这是暗号，请回电脑（Port）：";
 
     public static String buildWithPort(int port) {
         return PORT_HEADER + port;
@@ -26,5 +27,4 @@ public class MessageCreator {
         }
         return null;
     }
-
 }

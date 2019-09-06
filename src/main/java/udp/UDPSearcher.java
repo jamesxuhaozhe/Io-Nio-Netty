@@ -9,34 +9,33 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * UDP 搜索者，用于搜索服务支持方
+ * UDP searcher, used to search the provider
  */
 public class UDPSearcher {
+
     private static final int LISTEN_PORT = 30000;
 
-
     public static void main(String[] args) throws IOException, InterruptedException {
-        System.out.println("UDPSearcher Started.");
+        System.out.println("UDPSearcher started");
 
         Listener listener = listen();
         sendBroadcast();
 
-        // 读取任意键盘信息后可以退出
-        //noinspection ResultOfMethodCallIgnored
+        // any keyboard event will exit the program
         System.in.read();
 
         List<Device> devices = listener.getDevicesAndClose();
 
-        for (Device device : devices) {
-            System.out.println("Device:" + device.toString());
+        for(Device device : devices) {
+            System.out.println("Device: " + device);
         }
 
-        // 完成
-        System.out.println("UDPSearcher Finished.");
+        // finish
+        System.out.println("UDPSearcher finished");
     }
 
     private static Listener listen() throws InterruptedException {
-        System.out.println("UDPSearcher start listen.");
+        System.out.println("UDPSearcher start listening");
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Listener listener = new Listener(LISTEN_PORT, countDownLatch);
         listener.start();
@@ -48,26 +47,27 @@ public class UDPSearcher {
     private static void sendBroadcast() throws IOException {
         System.out.println("UDPSearcher sendBroadcast started.");
 
-        // 作为搜索方，让系统自动分配端口
-        DatagramSocket ds = new DatagramSocket();
+        // allocate the port by default
+        DatagramSocket datagramSocket = new DatagramSocket();
 
-
-        // 构建一份请求数据
+        // build a data packet to search
         String requestData = MessageCreator.buildWithPort(LISTEN_PORT);
         byte[] requestDataBytes = requestData.getBytes();
-        // 直接构建packet
+
+        // build packet
         DatagramPacket requestPacket = new DatagramPacket(requestDataBytes,
                 requestDataBytes.length);
-        // 20000端口, 广播地址
+
+        // 20000, broadcast
         requestPacket.setAddress(InetAddress.getByName("255.255.255.255"));
         requestPacket.setPort(20000);
 
-        // 发送
-        ds.send(requestPacket);
-        ds.close();
+        // send
+        datagramSocket.send(requestPacket);
+        datagramSocket.close();
 
-        // 完成
-        System.out.println("UDPSearcher sendBroadcast finished.");
+        // finish
+        System.out.println("UDPSearcher send broadcast finished");
     }
 
     private static class Device {
@@ -96,8 +96,7 @@ public class UDPSearcher {
         private final CountDownLatch countDownLatch;
         private final List<Device> devices = new ArrayList<>();
         private boolean done = false;
-        private DatagramSocket ds = null;
-
+        private DatagramSocket datagramSocket = null;
 
         public Listener(int listenPort, CountDownLatch countDownLatch) {
             super();
@@ -109,29 +108,28 @@ public class UDPSearcher {
         public void run() {
             super.run();
 
-            // 通知已启动
+            // notify it is running already
             countDownLatch.countDown();
-            try {
-                // 监听回送端口
-                ds = new DatagramSocket(listenPort);
 
+            try {
+                //listening port
+                datagramSocket = new DatagramSocket(listenPort);
 
                 while (!done) {
-                    // 构建接收实体
+                    // build receive pack
                     final byte[] buf = new byte[512];
                     DatagramPacket receivePack = new DatagramPacket(buf, buf.length);
 
-                    // 接收
-                    ds.receive(receivePack);
+                    // receive data
+                    datagramSocket.receive(receivePack);
 
-                    // 打印接收到的信息与发送者的信息
-                    // 发送者的IP地址
+                    // print sender's info data, ip , port and so on
                     String ip = receivePack.getAddress().getHostAddress();
                     int port = receivePack.getPort();
                     int dataLen = receivePack.getLength();
                     String data = new String(receivePack.getData(), 0, dataLen);
-                    System.out.println("UDPSearcher receive form ip:" + ip
-                            + "\tport:" + port + "\tdata:" + data);
+                    System.out.println("UDPSearcher receive from ip: " + ip +
+                            "\tport: " + port + "\tdata: " + data);
 
                     String sn = MessageCreator.parseSn(data);
                     if (sn != null) {
@@ -139,19 +137,18 @@ public class UDPSearcher {
                         devices.add(device);
                     }
                 }
-            } catch (Exception ignored) {
-
+            } catch (Exception e) {
+                e.printStackTrace();
             } finally {
                 close();
             }
-            System.out.println("UDPSearcher listener finished.");
-
+            System.out.println("UDPSearcher listener is dead.");
         }
 
         private void close() {
-            if (ds != null) {
-                ds.close();
-                ds = null;
+            if (datagramSocket!= null) {
+                datagramSocket.close();
+                datagramSocket = null;
             }
         }
 
