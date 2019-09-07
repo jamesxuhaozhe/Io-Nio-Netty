@@ -7,6 +7,9 @@ import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * Typical tcp server
+ */
 public class SocketDemoServer {
 
     public static void main(String[] args) throws IOException {

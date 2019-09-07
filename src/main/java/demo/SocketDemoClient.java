@@ -10,6 +10,9 @@ import java.net.Inet4Address;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
+/**
+ * Typical tcp client demo
+ */
 public class SocketDemoClient {
 
     public static void main(String[] args) throws IOException {
