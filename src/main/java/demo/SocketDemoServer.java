@@ -19,7 +19,7 @@ public class SocketDemoServer {
         System.out.println("Server info: " + server.getInetAddress() + " Port: " + server.getLocalPort());
 
         // wait for the client to connect
-        for(;;) {
+        while (true){
             // get the client connection
             Socket client = server.accept();
 

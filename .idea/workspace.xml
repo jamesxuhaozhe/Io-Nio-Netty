@@ -120,7 +120,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="185" />
     <option name="y" value="23" />
     <option name="width" value="925" />
@@ -196,7 +196,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MyUDPSearcher">
+  <component name="RunManager" selected="Application.IOClient">
     <configuration name="IOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.IOClient" />
       <module name="java-io.java-io.main" />
@@ -264,8 +264,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyUDPSearcher" />
-        <item itemvalue="Application.MyUDPProvider" />
         <item itemvalue="Application.SocketDemoClient" />
         <item itemvalue="Application.SocketDemoServer" />
         <item itemvalue="Application.IOClient" />
