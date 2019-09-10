@@ -28,7 +28,6 @@ public class SocketDemoServer {
 
             // start the thread
             handlerThread.start();
-
         }
     }
 
