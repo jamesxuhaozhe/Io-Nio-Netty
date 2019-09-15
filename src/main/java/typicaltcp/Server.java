@@ -17,12 +17,12 @@ public class Server {
 
         initServerSocket(server);
 
-        // 绑定到本地端口上
+        // bind to the local port and set the backlog to 50
         server.bind(new InetSocketAddress(Inet4Address.getLocalHost(), PORT), 50);
 
 
-        System.out.println("服务器准备就绪～");
-        System.out.println("服务器信息：" + server.getInetAddress() + " P:" + server.getLocalPort());
+        System.out.println("Server is ready～");
+        System.out.println("Server info is：" + server.getInetAddress() + " Port:" + server.getLocalPort());
 
 
         // 等待客户端连接
