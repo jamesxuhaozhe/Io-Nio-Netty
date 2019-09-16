@@ -25,7 +25,7 @@ public class Server {
         System.out.println("Server info is：" + server.getInetAddress() + " Port:" + server.getLocalPort());
 
 
-        // 等待客户端连接
+        // wait for the client to connect
         for (; ; ) {
             // 得到客户端
             Socket client = server.accept();
