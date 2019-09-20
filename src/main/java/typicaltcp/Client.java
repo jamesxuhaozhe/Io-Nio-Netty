@@ -21,20 +21,20 @@ public class Client {
         // 链接到本地20000端口，超时时间3秒，超过则抛出超时异常
         socket.connect(new InetSocketAddress(Inet4Address.getLocalHost(), PORT), 3000);
 
-        System.out.println("已发起服务器连接，并进入后续流程～");
-        System.out.println("客户端信息：" + socket.getLocalAddress() + " P:" + socket.getLocalPort());
-        System.out.println("服务器信息：" + socket.getInetAddress() + " P:" + socket.getPort());
+        System.out.println("Initiating connection...");
+        System.out.println("Client info：" + socket.getLocalAddress() + " Port:" + socket.getLocalPort());
+        System.out.println("Server info：" + socket.getInetAddress() + " Port:" + socket.getPort());
 
         try {
-            // 发送接收数据
+            // send data
             todo(socket);
         } catch (Exception e) {
-            System.out.println("异常关闭");
+            System.out.println("Exception gets thrown");
         }
 
         // 释放资源
         socket.close();
-        System.out.println("客户端已退出～");
+        System.out.println("Client has already exited");
 
     }
 
