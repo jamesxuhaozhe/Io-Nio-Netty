@@ -27,11 +27,11 @@ public class Server {
 
         // wait for the client to connect
         for (; ; ) {
-            // 得到客户端
+            // get the client
             Socket client = server.accept();
-            // 客户端构建异步线程
+            // create the thread handler
             ClientHandler clientHandler = new ClientHandler(client);
-            // 启动线程
+            // start the thread
             clientHandler.start();
         }
 

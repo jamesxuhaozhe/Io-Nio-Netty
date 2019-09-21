@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a253b22b-4257-47f4-a7b5-31a1cfeb4331" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/typicaltcp/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/typicaltcp/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/typicaltcp/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/typicaltcp/Server.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -110,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1130">
+            <state relative-caret-position="345">
               <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+            <state relative-caret-position="427">
+              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -186,8 +185,8 @@
         <option value="$PROJECT_DIR$/src/main/java/udp/UDPSearcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/SocketDemoClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/demo/SocketDemoServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/typicaltcp/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/typicaltcp/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/java/typicaltcp/Server.java" />
       </list>
     </option>
   </component>
@@ -398,12 +397,12 @@
       <workItem from="1567574920218" duration="79000" />
       <workItem from="1567694417391" duration="8412000" />
       <workItem from="1567867043696" duration="5816000" />
-      <workItem from="1568987614187" duration="248000" />
+      <workItem from="1568987614187" duration="785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23308000" />
+    <option name="totallyTimeSpent" value="23845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -522,16 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/netty/NettyServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -574,8 +563,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1130">
+        <state relative-caret-position="345">
           <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
