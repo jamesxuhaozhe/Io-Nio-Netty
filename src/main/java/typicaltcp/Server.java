@@ -48,7 +48,7 @@ public class Server {
         // 等效于上面的方案，队列设置为50个
         //serverSocket = new ServerSocket(PORT, 50);
 
-        // 与上面等同
+        // same as above
         // serverSocket = new ServerSocket(PORT, 50, Inet4Address.getLocalHost());
 
         return serverSocket;
