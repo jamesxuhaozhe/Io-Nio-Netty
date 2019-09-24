@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a253b22b-4257-47f4-a7b5-31a1cfeb4331" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/typicaltcp/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/typicaltcp/Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="a253b22b-4257-47f4-a7b5-31a1cfeb4331" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -124,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+            <state relative-caret-position="-704">
+              <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -191,10 +189,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="185" />
     <option name="y" value="23" />
-    <option name="width" value="925" />
-    <option name="height" value="985" />
+    <option name="width" value="1680" />
+    <option name="height" value="986" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -397,15 +394,16 @@
       <workItem from="1567574920218" duration="79000" />
       <workItem from="1567694417391" duration="8412000" />
       <workItem from="1567867043696" duration="5816000" />
-      <workItem from="1568987614187" duration="785000" />
+      <workItem from="1568987614187" duration="1135000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23845000" />
+    <option name="totallyTimeSpent" value="24195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -419,7 +417,7 @@
       <window_info content_ui="combo" id="Project" order="9" visible="true" weight="0.21611722" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" />
       <window_info anchor="bottom" id="Run" order="1" weight="0.32810867" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.42424244" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.42424244" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Statistic" order="5" />
@@ -573,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/typicaltcp/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        <state relative-caret-position="-704">
+          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
