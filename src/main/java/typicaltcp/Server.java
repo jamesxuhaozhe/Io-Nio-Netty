@@ -27,6 +27,7 @@ public class Server {
 
         // wait for the client to connect
         for (; ; ) {
+            // first commit
             // get the client
             Socket client = server.accept();
             // create the thread handler
