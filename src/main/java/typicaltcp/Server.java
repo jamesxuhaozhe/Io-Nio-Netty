@@ -39,7 +39,7 @@ public class Server {
     }
 
     private static ServerSocket createServerSocket() throws IOException {
-        // 创建基础的ServerSocket
+        // create basic ServerSocket
         ServerSocket serverSocket = new ServerSocket();
 
         // 绑定到本地端口20000上，并且设置当前可允许等待链接的队列为50个
