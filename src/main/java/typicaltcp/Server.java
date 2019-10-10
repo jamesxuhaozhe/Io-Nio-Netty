@@ -26,7 +26,7 @@ public class Server {
 
 
         // wait for the client to connect
-        for (; ; ) {
+        while (true) {
             // first commit
             // get the client
             Socket client = server.accept();
