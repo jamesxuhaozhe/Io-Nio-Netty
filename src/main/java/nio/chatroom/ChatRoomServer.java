@@ -2,6 +2,8 @@ package nio.chatroom;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
@@ -57,7 +59,60 @@ public class ChatRoomServer {
             socketChannel.configureBlocking(false);
             socketChannel.register(selector, SelectionKey.OP_READ);
 
-
+            key.interestOps(SelectionKey.OP_ACCEPT);
+            System.out.println("Server is listening from client: " + socketChannel.getRemoteAddress());
+            socketChannel.write(charset.encode("Please input your name."));
         }
+
+        if (key.isReadable()) {
+            SocketChannel socketChannel = (SocketChannel) key.channel();
+            ByteBuffer buffer = ByteBuffer.allocate(1024);
+            StringBuilder content = new StringBuilder();
+            try {
+                while (socketChannel.read(buffer) > 0) {
+                    buffer.flip();
+                    content.append(charset.decode(buffer));
+                }
+                System.out.println("Server is listening from client " + socketChannel.getRemoteAddress() + " data rev is: " + content);
+            } catch (IOException io) {
+                key.cancel();
+                if (key.channel() != null) {
+                    key.channel().close();
+                }
+            }
+
+            if (content.length() > 0) {
+                String[] arrayContent = content.toString().split(USER_CONTENT_SPLIT);
+                if (arrayContent != null && arrayContent.length == 1) {
+                    String name = arrayContent[0];
+                    if (users.contains(name)) {
+                        socketChannel.write(charset.encode(USER_EXIST));
+                    } else {
+                        users.add(name);
+                        int num = getOnlineNum(selector);
+                        String message = "welcome " + name + " to chat room! Online numbers: " + num;
+                        BroadCast(selector, null, message);
+                    }
+                } else if (arrayContent != null && arrayContent.length > 1) {
+                    String name = arrayContent[0];
+                    String message = content.substring(name.length() + USER_CONTENT_SPLIT.length());
+                    message = name + " say " + message;
+                    if (users.contains(name)) {
+                        BroadCast(selector, socketChannel, message);
+                    }
+                }
+            }
+        }
+    }
+
+    private static int getOnlineNum(Selector selector) {
+        int result = 0;
+        for (SelectionKey key : selector.keys()) {
+            Channel channel = key.channel();
+            if (channel instanceof SocketChannel) {
+                result++;
+            }
+        }
+        return result;
     }
 }
