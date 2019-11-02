@@ -105,6 +105,17 @@ public class ChatRoomServer {
         }
     }
 
+    private void BroadCast(Selector selector, SocketChannel except, String content) throws IOException {
+        //broadcast the message content to all socketchannels
+        for (SelectionKey key : selector.keys()) {
+            Channel targetChannel = key.channel();
+            if (targetChannel instanceof SocketChannel && targetChannel != except) {
+                SocketChannel dest = (SocketChannel) targetChannel;
+                dest.write(charset.encode(content));
+            }
+        }
+    }
+
     private static int getOnlineNum(Selector selector) {
         int result = 0;
         for (SelectionKey key : selector.keys()) {
@@ -114,5 +125,9 @@ public class ChatRoomServer {
             }
         }
         return result;
+    }
+
+    public static void main(String[] args) throws IOException {
+        new ChatRoomServer().init();
     }
 }

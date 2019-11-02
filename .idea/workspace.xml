@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a253b22b-4257-47f4-a7b5-31a1cfeb4331" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomServer.java" afterDir="false" />
     </list>
@@ -38,15 +39,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/nio/Buffer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4890">
-              <caret line="355" column="32" selection-start-line="355" selection-start-column="32" selection-end-line="355" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nio/NIOServer.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,11 +81,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+            <state relative-caret-position="152">
+              <caret line="108" column="61" lean-forward="true" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-88">
+              <caret line="57" column="58" lean-forward="true" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,14 +191,15 @@
         <option value="$PROJECT_DIR$/src/main/java/nio/nio_example/common/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/nio/nio_example/server/ServerHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomClient.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="727" />
-    <option name="y" value="23" />
-    <option name="width" value="953" />
-    <option name="height" value="986" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-84" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -285,7 +290,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572618726896" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572697020351" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -312,13 +317,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DeadLockDemo">
-    <configuration name="DeadLockDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="art_of_java_concurrency_programming.chapter_1.DeadLockDemo" />
+  <component name="RunManager" selected="Application.ChatRoomClient">
+    <configuration name="ChatRoomClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nio.chatroom.ChatRoomClient" />
       <module name="java-io.java-io.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="art_of_java_concurrency_programming.chapter_1.*" />
+          <option name="PATTERN" value="nio.chatroom.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -326,12 +331,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IOClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="io.IOClient" />
+    <configuration name="ChatRoomServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="nio.chatroom.ChatRoomServer" />
       <module name="java-io.java-io.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.*" />
+          <option name="PATTERN" value="nio.chatroom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeadLockDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="art_of_java_concurrency_programming.chapter_1.DeadLockDemo" />
+      <module name="java-io.java-io.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="art_of_java_concurrency_programming.chapter_1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -365,25 +383,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UDPSearcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="udp.UDPSearcher" />
-      <module name="java-io.java-io.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="udp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ChatRoomClient" />
+        <item itemvalue="Application.ChatRoomServer" />
         <item itemvalue="Application.DeadLockDemo" />
         <item itemvalue="Application.SocketDemoClient" />
         <item itemvalue="Application.SocketDemoServer" />
-        <item itemvalue="Application.IOClient" />
       </list>
     </recent_temporary>
   </component>
@@ -407,16 +413,15 @@
       <workItem from="1568987614187" duration="1135000" />
       <workItem from="1569678991887" duration="2708000" />
       <workItem from="1570632043621" duration="608000" />
-      <workItem from="1572596162666" duration="3100000" />
+      <workItem from="1572596162666" duration="6147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39292000" />
+    <option name="totallyTimeSpent" value="42339000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="727" y="23" width="953" height="986" extended-state="0" />
-    <editor active="true" />
+    <frame x="-84" y="-1080" width="1920" height="1080" extended-state="0" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Image Layers" order="1" />
@@ -427,10 +432,10 @@
       <window_info id="UI Designer" order="6" />
       <window_info id="Job Explorer" order="7" />
       <window_info id="Structure" order="8" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="9" visible="true" weight="0.19868277" />
+      <window_info active="true" content_ui="combo" id="Project" order="9" visible="true" weight="0.16240682" />
       <window_info anchor="bottom" id="DB Execution Console" order="0" />
-      <window_info anchor="bottom" id="Run" order="1" weight="0.32810867" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.68713105" />
+      <window_info anchor="bottom" id="Run" order="1" visible="true" weight="0.3272543" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.6237942" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" weight="0.3291536" />
       <window_info anchor="bottom" id="Statistic" order="5" />
@@ -707,8 +712,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+        <state relative-caret-position="152">
+          <caret line="108" column="61" lean-forward="true" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nio/chatroom/ChatRoomClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88">
+          <caret line="57" column="58" lean-forward="true" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
