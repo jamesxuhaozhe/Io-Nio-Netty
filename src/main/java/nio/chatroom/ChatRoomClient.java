@@ -24,7 +24,7 @@ public class ChatRoomClient {
 
     private static final String USER_EXIST = "system message: user exist, please change a name";
 
-    private static final String USER_CONTENT_SPILIT = "#@#";
+    private static final String USER_CONTENT_SPLIT = "#@#";
 
     public void init() throws IOException {
         selector = Selector.open();
@@ -42,9 +42,9 @@ public class ChatRoomClient {
             }
             if ("".equals(name)) {
                 name = line;
-                line = name + USER_CONTENT_SPILIT;
+                line = name + USER_CONTENT_SPLIT;
             } else {
-                line = name + USER_CONTENT_SPILIT + line;
+                line = name + USER_CONTENT_SPLIT + line;
             }
             socketChannel.write(charset.encode(line));
         }

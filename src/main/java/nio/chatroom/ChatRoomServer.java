@@ -106,7 +106,7 @@ public class ChatRoomServer {
     }
 
     private void BroadCast(Selector selector, SocketChannel except, String content) throws IOException {
-        //broadcast the message content to all socketchannels
+        //broadcast the message content to all socket channels
         for (SelectionKey key : selector.keys()) {
             Channel targetChannel = key.channel();
             if (targetChannel instanceof SocketChannel && targetChannel != except) {
