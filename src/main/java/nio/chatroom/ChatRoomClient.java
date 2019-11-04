@@ -14,9 +14,9 @@ public class ChatRoomClient {
 
     private Selector selector;
 
-    static final int port = 9999;
+    private static final int port = 9999;
 
-    private Charset charset = Charset.forName("UTF-8");
+    private static final Charset charset = Charset.forName("UTF-8");
 
     private SocketChannel socketChannel;
 

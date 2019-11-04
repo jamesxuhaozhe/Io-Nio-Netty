@@ -17,15 +17,15 @@ public class ChatRoomServer {
 
     private Selector selector;
 
-    static final int port = 9999;
+    private static final int port = 9999;
 
-    private Charset charset = Charset.forName("UTF-8");
+    private static final Charset charset = Charset.forName("UTF-8");
 
     private static Set<String> users = new HashSet<>();
 
     private static final String USER_EXIST = "system message: user exist, please change a name";
 
-    private static String USER_CONTENT_SPLIT = "#@#";
+    private static final String USER_CONTENT_SPLIT = "#@#";
 
     private static boolean flag = false;
 
@@ -39,6 +39,8 @@ public class ChatRoomServer {
 
         System.out.println("Server is listening now...");
 
+        int count = 0;
+
         while (true) {
             int readyChannels = selector.select();
             if (readyChannels <= 0) {
@@ -50,6 +52,8 @@ public class ChatRoomServer {
                 iterator.remove();
                 handleSelectionKey(server, key);
             }
+            count++;
+            System.out.println("This is loop count: " + count);
         }
     }
 
