@@ -1,5 +1,7 @@
 .idea/
 
-./out
+out
 
-gradle
+.gradle
+
+.DS_Store
