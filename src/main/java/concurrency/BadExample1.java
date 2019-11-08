@@ -1,6 +1,6 @@
 package concurrency;
 
-public class BadExample {
+public class BadExample1 {
     private long count = 0;
 
     public void add10k() {
@@ -13,7 +13,7 @@ public class BadExample {
         return count;
     }
     public static void main(String[] args) throws InterruptedException {
-        final BadExample badExample = new BadExample();
+        final BadExample1 badExample = new BadExample1();
 
         Thread t1 = new Thread(badExample::add10k);
         Thread t2 = new Thread(badExample::add10k);
