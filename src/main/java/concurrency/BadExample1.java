@@ -3,13 +3,13 @@ package concurrency;
 public class BadExample1 {
     private long count = 0;
 
-    public void add10k() {
+    private void add10k() {
         for (int i = 0; i < 10000; i++) {
             count++;
         }
     }
 
-    public long getCount() {
+    private long getCount() {
         return count;
     }
     public static void main(String[] args) throws InterruptedException {
