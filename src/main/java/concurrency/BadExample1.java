@@ -12,6 +12,7 @@ public class BadExample1 {
     private long getCount() {
         return count;
     }
+
     public static void main(String[] args) throws InterruptedException {
         final BadExample1 badExample = new BadExample1();
 
