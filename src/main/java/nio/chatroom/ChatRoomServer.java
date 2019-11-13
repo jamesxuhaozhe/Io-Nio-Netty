@@ -29,7 +29,7 @@ public class ChatRoomServer {
 
     private static boolean flag = false;
 
-    public void init() throws IOException {
+    private void init() throws IOException {
         selector = Selector.open();
         ServerSocketChannel server = ServerSocketChannel.open();
         server.bind(new InetSocketAddress(port));

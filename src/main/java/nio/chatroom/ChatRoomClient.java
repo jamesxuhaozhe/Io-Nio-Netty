@@ -26,7 +26,7 @@ public class ChatRoomClient {
 
     private static final String USER_CONTENT_SPLIT = "#@#";
 
-    public void init() throws IOException {
+    private void init() throws IOException {
         selector = Selector.open();
         //connect remote ip and port num
         socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", port));
@@ -68,7 +68,7 @@ public class ChatRoomClient {
                     }
                 }
             } catch (IOException io) {
-
+                // no-op
             }
         }
 
