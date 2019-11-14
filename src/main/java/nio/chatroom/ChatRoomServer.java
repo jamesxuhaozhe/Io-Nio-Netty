@@ -27,8 +27,6 @@ public class ChatRoomServer {
 
     private static final String USER_CONTENT_SPLIT = "#@#";
 
-    private static boolean flag = false;
-
     private void init() throws IOException {
         selector = Selector.open();
         ServerSocketChannel server = ServerSocketChannel.open();
