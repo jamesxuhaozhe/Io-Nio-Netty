@@ -81,7 +81,7 @@ public class Server {
         @Override
         public void run() {
             super.run();
-            System.out.println("新客户端连接：" + socket.getInetAddress() +
+            System.out.println("New client connection：" + socket.getInetAddress() +
                     " P:" + socket.getPort());
 
             try {
@@ -143,7 +143,7 @@ public class Server {
                 }
             }
 
-            System.out.println("客户端已退出：" + socket.getInetAddress() +
+            System.out.println("Client disconnected：" + socket.getInetAddress() +
                     " P:" + socket.getPort());
 
         }

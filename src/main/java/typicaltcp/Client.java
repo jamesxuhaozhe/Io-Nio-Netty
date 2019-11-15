@@ -136,7 +136,7 @@ public class Client {
         byteBuffer.putDouble(d);
 
         // String
-        String str = "Hello你好！";
+        String str = "Hello！";
         byteBuffer.put(str.getBytes());
 
         // 发送到服务器
@@ -144,7 +144,7 @@ public class Client {
 
         // 接收服务器返回
         int read = inputStream.read(buffer);
-        System.out.println("收到数量：" + read);
+        System.out.println("Received number：" + read);
 
         // 资源释放
         outputStream.close();
