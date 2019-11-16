@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'java-io'
+group 'java-io-concurrency'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
