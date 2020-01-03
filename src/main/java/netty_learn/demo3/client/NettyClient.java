@@ -1,4 +1,4 @@
-package netty_learn.demo3;
+package netty_learn.demo3.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelInitializer;
@@ -6,6 +6,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import netty_learn.demo3.client.ClientHandler;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;

@@ -1,8 +1,9 @@
-package netty_learn.demo3;
+package netty_learn.demo3.protocol.response;
 
 import lombok.Data;
+import netty_learn.demo3.protocol.Packet;
 
-import static netty_learn.demo3.Command.LOGIN_REQUEST;
+import static netty_learn.demo3.protocol.command.Command.LOGIN_REQUEST;
 
 @Data
 public class LoginRequestPacket extends Packet {

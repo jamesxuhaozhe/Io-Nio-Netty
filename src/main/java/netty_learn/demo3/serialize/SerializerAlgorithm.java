@@ -1,4 +1,4 @@
-package netty_learn.demo3;
+package netty_learn.demo3.serialize;
 
 public interface SerializerAlgorithm {
 

@@ -1,6 +1,8 @@
-package netty_learn.demo3;
+package netty_learn.demo3.serialize.impl;
 
 import com.alibaba.fastjson.JSON;
+import netty_learn.demo3.serialize.Serializer;
+import netty_learn.demo3.serialize.SerializerAlgorithm;
 
 public class JSONSerializer implements Serializer {
     @Override

@@ -1,4 +1,6 @@
-package netty_learn.demo3;
+package netty_learn.demo3.serialize;
+
+import netty_learn.demo3.serialize.impl.JSONSerializer;
 
 public interface Serializer {
 

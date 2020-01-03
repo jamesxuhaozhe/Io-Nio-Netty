@@ -1,8 +1,12 @@
-package netty_learn.demo3;
+package netty_learn.demo3.client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import netty_learn.demo3.protocol.response.LoginRequestPacket;
+import netty_learn.demo3.protocol.response.LoginResponsePacket;
+import netty_learn.demo3.protocol.Packet;
+import netty_learn.demo3.protocol.PacketCodeC;
 
 import java.util.Date;
 import java.util.UUID;

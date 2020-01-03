@@ -1,4 +1,4 @@
-package netty_learn.demo3;
+package netty_learn.demo3.protocol;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;

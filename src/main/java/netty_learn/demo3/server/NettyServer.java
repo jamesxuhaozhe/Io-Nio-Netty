@@ -1,4 +1,4 @@
-package netty_learn.demo3;
+package netty_learn.demo3.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
