@@ -1,10 +1,8 @@
-package netty_learn.demo1;
+package netty_learn.demo3;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import netty_learn.demo3.LoginRequestPacket;
-import netty_learn.demo3.PacketCodeC;
 
 import java.util.Date;
 import java.util.UUID;
@@ -26,5 +24,22 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
         // 写数据
         ctx.channel().writeAndFlush(buffer);
+    }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        ByteBuf byteBuf = (ByteBuf) msg;
+
+        Packet packet = PacketCodeC.INSTANCE.decode(byteBuf);
+
+        if (packet instanceof LoginResponsePacket) {
+            LoginResponsePacket loginResponsePacket = (LoginResponsePacket) packet;
+
+            if (loginResponsePacket.isSuccess()) {
+                System.out.println();
+            } else {
+                System.out.println(new Date() + ": 客户端登录失败，原因：" + loginResponsePacket.getReason());
+            }
+        }
     }
 }

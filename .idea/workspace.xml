@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7c762-ebca-4758-a7d5-e4ecafdeca72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/ServerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginResponsePacket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginRequestPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginRequestPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/FirstClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/FirstServerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/ServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/PacketCodeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/PacketCodeC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,11 +173,11 @@
       </method>
     </configuration>
     <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netty_learn.demo1.NettyClient" />
+      <option name="MAIN_CLASS_NAME" value="netty_learn.demo3.NettyClient" />
       <module name="java-io-concurrency.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netty_learn.demo1.*" />
+          <option name="PATTERN" value="netty_learn.demo3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,11 +186,11 @@
       </method>
     </configuration>
     <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="netty_learn.demo1.NettyServer" />
+      <option name="MAIN_CLASS_NAME" value="netty_learn.demo3.NettyServer" />
       <module name="java-io-concurrency.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="netty_learn.demo1.*" />
+          <option name="PATTERN" value="netty_learn.demo3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -248,7 +251,7 @@
       <workItem from="1576907231261" duration="2472000" />
       <workItem from="1578026825304" duration="3598000" />
       <workItem from="1578035881401" duration="86000" />
-      <workItem from="1578036050177" duration="2995000" />
+      <workItem from="1578036050177" duration="5124000" />
     </task>
     <servers />
   </component>
@@ -256,10 +259,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1578035511080">
+    <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1578055571003">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578035511080" />
+    <state x="653" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1578055571003" />
+    <state x="614" y="391" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1578055336275">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="614" y="391" width="451" height="276" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1680.1050@0.0.1680.1050" timestamp="1578055336275" />
     <state width="1638" height="158" key="GridCell.Tab.0.bottom" timestamp="1578031766404">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

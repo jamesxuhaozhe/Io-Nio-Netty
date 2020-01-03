@@ -2,13 +2,12 @@ package netty_learn.demo3;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
-import the.flash.protocol.response.LoginResponsePacket;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static netty_learn.demo3.Command.LOGIN_REQUEST;
-import static the.flash.protocol.command.Command.LOGIN_RESPONSE;
+import static netty_learn.demo3.Command.LOGIN_RESPONSE;
 
 public class PacketCodeC {
 
@@ -87,4 +86,4 @@ public class PacketCodeC {
         return packetTypeMap.get(command);
     }
 }
-}
+
