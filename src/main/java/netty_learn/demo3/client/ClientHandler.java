@@ -3,10 +3,12 @@ package netty_learn.demo3.client;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import netty_learn.demo3.protocol.request.MessageResponsePacket;
 import netty_learn.demo3.protocol.response.LoginRequestPacket;
 import netty_learn.demo3.protocol.response.LoginResponsePacket;
 import netty_learn.demo3.protocol.Packet;
 import netty_learn.demo3.protocol.PacketCodeC;
+import netty_learn.demo3.util.LoginUtil;
 
 import java.util.Date;
 import java.util.UUID;
@@ -41,9 +43,13 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
 
             if (loginResponsePacket.isSuccess()) {
                 System.out.println(new Date() + ": 客户端登录成功");
+                LoginUtil.markAsLogin(ctx.channel());
             } else {
                 System.out.println(new Date() + ": 客户端登录失败，原因：" + loginResponsePacket.getReason());
             }
+        } else if (packet instanceof MessageResponsePacket) {
+            MessageResponsePacket messageResponsePacket = (MessageResponsePacket) packet;
+            System.out.println(new Date() + ": 收到服务端的消息: " + messageResponsePacket.getMessage());
         }
     }
 }

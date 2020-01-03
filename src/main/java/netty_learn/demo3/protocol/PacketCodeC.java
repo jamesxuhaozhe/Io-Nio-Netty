@@ -2,6 +2,8 @@ package netty_learn.demo3.protocol;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
+import netty_learn.demo3.protocol.request.MessageRequestPacket;
+import netty_learn.demo3.protocol.request.MessageResponsePacket;
 import netty_learn.demo3.protocol.response.LoginRequestPacket;
 import netty_learn.demo3.protocol.response.LoginResponsePacket;
 import netty_learn.demo3.serialize.impl.JSONSerializer;
@@ -12,6 +14,8 @@ import java.util.Map;
 
 import static netty_learn.demo3.protocol.command.Command.LOGIN_REQUEST;
 import static netty_learn.demo3.protocol.command.Command.LOGIN_RESPONSE;
+import static netty_learn.demo3.protocol.command.Command.MESSAGE_REQUEST;
+import static netty_learn.demo3.protocol.command.Command.MESSAGE_RESPONSE;
 
 public class PacketCodeC {
 
@@ -26,6 +30,8 @@ public class PacketCodeC {
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.class);
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
+        packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
+        packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();

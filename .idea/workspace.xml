@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7c762-ebca-4758-a7d5-e4ecafdeca72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/request/MessageRequestPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/request/MessageResponsePacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/attribute/Attributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/util/LoginUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/client/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/JSONSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/serialize/impl/JSONSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginRequestPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/response/LoginRequestPacket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/response/LoginResponsePacket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/client/NettyClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/server/NettyServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/Packet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/PacketCodeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/PacketCodeC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/serialize/Serializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/SerializerAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/serialize/SerializerAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/server/ServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/client/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/PacketCodeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/PacketCodeC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/request/MessageResponsePacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/protocol/request/MessageResponsePacket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +247,7 @@
       <workItem from="1576907231261" duration="2472000" />
       <workItem from="1578026825304" duration="3598000" />
       <workItem from="1578035881401" duration="86000" />
-      <workItem from="1578036050177" duration="7034000" />
+      <workItem from="1578036050177" duration="8325000" />
     </task>
     <servers />
   </component>
