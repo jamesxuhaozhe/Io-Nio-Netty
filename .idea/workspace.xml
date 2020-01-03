@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63f7c762-ebca-4758-a7d5-e4ecafdeca72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/FirstClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/FirstServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo2/BufferTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/JSONSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginRequestPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Packet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/PacketCodeC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/Serializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/SerializerAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/ServerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo1/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginRequestPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/LoginRequestPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/PacketCodeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netty_learn/demo3/PacketCodeC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +248,7 @@
       <workItem from="1576907231261" duration="2472000" />
       <workItem from="1578026825304" duration="3598000" />
       <workItem from="1578035881401" duration="86000" />
-      <workItem from="1578036050177" duration="2138000" />
+      <workItem from="1578036050177" duration="2995000" />
     </task>
     <servers />
   </component>
