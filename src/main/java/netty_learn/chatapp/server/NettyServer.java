@@ -8,6 +8,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
+import netty_learn.chatapp.codec.Splitter;
 import netty_learn.chatapp.server.handler.LoginRequestHandler;
 import netty_learn.chatapp.server.handler.MessageRequestHandler;
 
@@ -29,6 +30,7 @@ public class NettyServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     protected void initChannel(NioSocketChannel ch) {
                         ch.pipeline()
+                                .addLast(new Splitter())
                                 .addLast(new PacketDecoder())
                                 .addLast(new LoginRequestHandler())
                                 .addLast(new MessageRequestHandler())

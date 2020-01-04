@@ -12,6 +12,7 @@ import netty_learn.chatapp.client.handler.LoginResponseHandler;
 import netty_learn.chatapp.client.handler.MessageResponseHandler;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
+import netty_learn.chatapp.codec.Splitter;
 import netty_learn.chatapp.protocol.request.MessageRequestPacket;
 import netty_learn.chatapp.util.LoginUtil;
 
@@ -41,6 +42,7 @@ public class NettyClient {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         ch.pipeline()
+                                .addLast(new Splitter())
                                 .addLast(new PacketDecoder())
                                 .addLast(new LoginResponseHandler())
                                 .addLast(new MessageResponseHandler())
