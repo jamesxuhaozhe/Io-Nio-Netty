@@ -13,8 +13,9 @@ import netty_learn.chatapp.client.handler.MessageResponseHandler;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
+import netty_learn.chatapp.protocol.request.LoginRequestPacket;
 import netty_learn.chatapp.protocol.request.MessageRequestPacket;
-import netty_learn.chatapp.util.LoginUtil;
+import netty_learn.chatapp.util.SessionUtil;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -75,16 +76,32 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+        Scanner sc = new Scanner(System.in);
+        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
+
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                if (LoginUtil.hasLogin(channel)) {
-                    System.out.println("输入消息发送至服务端: ");
-                    Scanner sc = new Scanner(System.in);
-                    String line = sc.nextLine();
+                if (!SessionUtil.hasLogin(channel)) {
+                    System.out.println("Please Enter your username: ");
+                    String username = sc.nextLine();
 
-                    channel.writeAndFlush(new MessageRequestPacket(line));
+                    loginRequestPacket.setUsername(username);
+                    loginRequestPacket.setPassword("pwd");
+                    channel.writeAndFlush(loginRequestPacket);
+                    waitForLoginResponse();
+                } else {
+                    String toUserId = sc.nextLine();
+                    String message = sc.nextLine();
+                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
                 }
             }
         }).start();
+    }
+
+    private static void waitForLoginResponse() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ignored) {
+        }
     }
 }

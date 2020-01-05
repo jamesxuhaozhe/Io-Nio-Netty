@@ -2,34 +2,22 @@ package netty_learn.chatapp.client.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import netty_learn.chatapp.protocol.request.LoginRequestPacket;
 import netty_learn.chatapp.protocol.response.LoginResponsePacket;
-import netty_learn.chatapp.util.LoginUtil;
-
-import java.util.Date;
-import java.util.UUID;
+import netty_learn.chatapp.session.Session;
+import netty_learn.chatapp.util.SessionUtil;
 
 public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginResponsePacket> {
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        // 创建登录对象
-        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
-        loginRequestPacket.setUserId(UUID.randomUUID().toString());
-        loginRequestPacket.setUsername("james");
-        loginRequestPacket.setPassword("pwd");
-
-        // 写数据
-        ctx.channel().writeAndFlush(loginRequestPacket);
-    }
-
-    @Override
     protected void channelRead0(ChannelHandlerContext ctx, LoginResponsePacket msg) throws Exception {
+        String userId = msg.getUserId();
+        String userName = msg.getUserName();
+
         if (msg.isSuccess()) {
-            System.out.println(new Date() + " Login successful");
-            LoginUtil.markAsLogin(ctx.channel());
+            System.out.println("[" + userName + "]登录成功，userId 为: " + userId);
+            SessionUtil.bindSession(new Session(userId, userName), ctx.channel());
         } else {
-            System.out.println(new Date() + " Login failed. Reason: " + msg.getReason());
+            System.out.println("[" + userName + "]登录失败，原因：" + msg.getReason());
         }
     }
 }
