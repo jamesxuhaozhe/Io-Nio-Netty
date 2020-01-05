@@ -2,7 +2,7 @@ package netty_learn.chatapp.client.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import netty_learn.chatapp.protocol.request.MessageResponsePacket;
+import netty_learn.chatapp.protocol.response.MessageResponsePacket;
 
 import java.util.Date;
 

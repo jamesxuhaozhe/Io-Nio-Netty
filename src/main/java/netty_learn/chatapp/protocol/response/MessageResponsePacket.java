@@ -1,4 +1,4 @@
-package netty_learn.chatapp.protocol.request;
+package netty_learn.chatapp.protocol.response;
 
 import lombok.Data;
 import netty_learn.chatapp.protocol.Packet;

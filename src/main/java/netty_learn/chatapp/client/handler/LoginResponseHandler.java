@@ -2,7 +2,7 @@ package netty_learn.chatapp.client.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import netty_learn.chatapp.protocol.response.LoginRequestPacket;
+import netty_learn.chatapp.protocol.request.LoginRequestPacket;
 import netty_learn.chatapp.protocol.response.LoginResponsePacket;
 import netty_learn.chatapp.util.LoginUtil;
 

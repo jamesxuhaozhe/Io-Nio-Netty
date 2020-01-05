@@ -1,10 +1,9 @@
 package netty_learn.chatapp.protocol;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufAllocator;
 import netty_learn.chatapp.protocol.request.MessageRequestPacket;
-import netty_learn.chatapp.protocol.request.MessageResponsePacket;
-import netty_learn.chatapp.protocol.response.LoginRequestPacket;
+import netty_learn.chatapp.protocol.response.MessageResponsePacket;
+import netty_learn.chatapp.protocol.request.LoginRequestPacket;
 import netty_learn.chatapp.protocol.response.LoginResponsePacket;
 import netty_learn.chatapp.serialize.impl.JSONSerializer;
 import netty_learn.chatapp.serialize.Serializer;
