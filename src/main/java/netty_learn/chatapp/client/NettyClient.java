@@ -82,16 +82,19 @@ public class NettyClient {
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if (!SessionUtil.hasLogin(channel)) {
-                    System.out.println("Please Enter your username: ");
+                    System.out.println("输入用户名登录: ");
                     String username = sc.nextLine();
-
                     loginRequestPacket.setUsername(username);
+
+                    // 密码使用默认的
                     loginRequestPacket.setPassword("pwd");
+
+                    // 发送登录数据包
                     channel.writeAndFlush(loginRequestPacket);
                     waitForLoginResponse();
                 } else {
-                    String toUserId = sc.nextLine();
-                    String message = sc.nextLine();
+                    String toUserId = sc.next();
+                    String message = sc.next();
                     channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
                 }
             }

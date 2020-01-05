@@ -8,8 +8,6 @@ import netty_learn.chatapp.protocol.response.MessageResponsePacket;
 import netty_learn.chatapp.session.Session;
 import netty_learn.chatapp.util.SessionUtil;
 
-import java.util.Date;
-
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPacket> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket msg) throws Exception {
@@ -26,9 +24,9 @@ public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRe
 
         // if the receiver's channel is ok and the is user has already login in
         if (toUserChannel != null && SessionUtil.hasLogin(toUserChannel)) {
-            ctx.channel().writeAndFlush(messageResponsePacket);
+            toUserChannel.writeAndFlush(messageResponsePacket);
         } else {
-            System.out.println(new Date() + " user id: " + msg.getToUserId() + " is offline");
+            System.err.println("[" + msg.getToUserId() + "] 不在线，发送失败!");
         }
     }
 }

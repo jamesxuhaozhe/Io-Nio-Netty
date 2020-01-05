@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 public class Session {
 
     private String userId;
-
     private String username;
 
     public Session(String userId, String userName) {
