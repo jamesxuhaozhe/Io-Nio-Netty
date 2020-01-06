@@ -105,6 +105,7 @@ public class NettyClient {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ignored) {
+
         }
     }
 }
