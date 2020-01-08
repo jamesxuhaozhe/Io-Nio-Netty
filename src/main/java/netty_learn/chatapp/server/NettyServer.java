@@ -33,10 +33,11 @@ public class NettyServer {
                         ch.pipeline()
                                 .addLast(new Splitter())
                                 .addLast(new PacketDecoder())
+                                .addLast(new PacketEncoder())
                                 .addLast(new LoginRequestHandler())
                                 .addLast(new AuthHandler())
                                 .addLast(new MessageRequestHandler())
-                                .addLast(new PacketEncoder());
+                                ;
                     }
                 });
 
