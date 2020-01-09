@@ -93,6 +93,7 @@ public class NettyClient {
                     channel.writeAndFlush(loginRequestPacket);
                     waitForLoginResponse();
                 } else {
+                    System.out.println("Input id message");
                     String toUserId = sc.next();
                     String message = sc.next();
                     channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
