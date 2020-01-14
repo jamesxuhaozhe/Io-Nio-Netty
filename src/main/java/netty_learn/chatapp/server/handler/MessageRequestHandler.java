@@ -10,7 +10,7 @@ import netty_learn.chatapp.util.SessionUtil;
 
 public class MessageRequestHandler extends SimpleChannelInboundHandler<MessageRequestPacket> {
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, MessageRequestPacket msg) {
         // get the session information
         Session session = SessionUtil.getSession(ctx.channel());
 

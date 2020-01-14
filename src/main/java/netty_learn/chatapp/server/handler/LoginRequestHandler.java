@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, LoginRequestPacket msg) {
 
         LoginResponsePacket loginResponsePacket = new LoginResponsePacket();
         loginResponsePacket.setVersion(msg.getVersion());

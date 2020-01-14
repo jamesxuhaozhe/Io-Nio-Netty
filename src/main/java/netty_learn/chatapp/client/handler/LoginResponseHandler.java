@@ -9,7 +9,7 @@ import netty_learn.chatapp.util.SessionUtil;
 public class LoginResponseHandler extends SimpleChannelInboundHandler<LoginResponsePacket> {
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, LoginResponsePacket msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, LoginResponsePacket msg) {
         String userId = msg.getUserId();
         String userName = msg.getUserName();
 
