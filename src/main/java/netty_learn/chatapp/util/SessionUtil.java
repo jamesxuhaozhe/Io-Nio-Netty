@@ -19,8 +19,10 @@ public class SessionUtil {
 
     public static void unBindSession(Channel channel) {
         if (hasLogin(channel)) {
-            userIdToMap.remove(getSession(channel).getUserId());
+            Session session = getSession(channel);
+            userIdToMap.remove(session.getUserId());
             channel.attr(Attributes.SESSION).set(null);
+            System.out.println(session + " 退出登录!");
         }
     }
 

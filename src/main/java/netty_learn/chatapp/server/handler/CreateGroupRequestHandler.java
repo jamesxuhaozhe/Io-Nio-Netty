@@ -38,8 +38,14 @@ public class CreateGroupRequestHandler extends SimpleChannelInboundHandler<Creat
 
         channelGroup.writeAndFlush(createGroupResponsePacket);
 
-        System.out.print("群创建成功，id 为[" + createGroupResponsePacket.getGroupId() + "], ");
+        System.out.println("群创建成功，id 为[" + createGroupResponsePacket.getGroupId() + "], ");
         System.out.println("群里面有：" + createGroupResponsePacket.getUserNameList());
 
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        System.out.println(cause.getMessage());
+        super.exceptionCaught(ctx, cause);
     }
 }

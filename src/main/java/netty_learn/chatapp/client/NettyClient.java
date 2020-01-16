@@ -17,8 +17,6 @@ import netty_learn.chatapp.client.handler.MessageResponseHandler;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
-import netty_learn.chatapp.protocol.request.LoginRequestPacket;
-import netty_learn.chatapp.protocol.request.MessageRequestPacket;
 import netty_learn.chatapp.util.SessionUtil;
 
 import java.util.Date;

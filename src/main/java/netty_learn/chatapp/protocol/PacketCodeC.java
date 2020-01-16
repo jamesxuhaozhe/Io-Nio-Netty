@@ -1,7 +1,11 @@
 package netty_learn.chatapp.protocol;
 
 import io.netty.buffer.ByteBuf;
+import netty_learn.chatapp.protocol.request.CreateGroupRequestPacket;
+import netty_learn.chatapp.protocol.request.LogoutRequestPacket;
 import netty_learn.chatapp.protocol.request.MessageRequestPacket;
+import netty_learn.chatapp.protocol.response.CreateGroupResponsePacket;
+import netty_learn.chatapp.protocol.response.LogoutResponsePacket;
 import netty_learn.chatapp.protocol.response.MessageResponsePacket;
 import netty_learn.chatapp.protocol.request.LoginRequestPacket;
 import netty_learn.chatapp.protocol.response.LoginResponsePacket;
@@ -11,8 +15,12 @@ import netty_learn.chatapp.serialize.Serializer;
 import java.util.HashMap;
 import java.util.Map;
 
+import static netty_learn.chatapp.protocol.command.Command.CREATE_GROUP_REQUEST;
+import static netty_learn.chatapp.protocol.command.Command.CREATE_GROUP_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.LOGIN_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.LOGIN_RESPONSE;
+import static netty_learn.chatapp.protocol.command.Command.LOGOUT_REQUEST;
+import static netty_learn.chatapp.protocol.command.Command.LOGOUT_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.MESSAGE_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.MESSAGE_RESPONSE;
 
@@ -31,6 +39,10 @@ public class PacketCodeC {
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
         packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
         packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
+        packetTypeMap.put(LOGOUT_REQUEST, LogoutRequestPacket.class);
+        packetTypeMap.put(LOGOUT_RESPONSE, LogoutResponsePacket.class);
+        packetTypeMap.put(CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
+        packetTypeMap.put(CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
