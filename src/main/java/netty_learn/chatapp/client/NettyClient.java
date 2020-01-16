@@ -8,7 +8,11 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import netty_learn.chatapp.client.console.ConsoleCommandManager;
+import netty_learn.chatapp.client.console.LoginConsoleCommand;
+import netty_learn.chatapp.client.handler.CreateGroupResponseHandler;
 import netty_learn.chatapp.client.handler.LoginResponseHandler;
+import netty_learn.chatapp.client.handler.LogoutResponseHandler;
 import netty_learn.chatapp.client.handler.MessageResponseHandler;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
@@ -42,12 +46,13 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
-                        ch.pipeline()
-                                .addLast(new Splitter())
-                                .addLast(new PacketDecoder())
-                                .addLast(new LoginResponseHandler())
-                                .addLast(new MessageResponseHandler())
-                                .addLast(new PacketEncoder());
+                        ch.pipeline().addLast(new Splitter());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new LogoutResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new CreateGroupResponseHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
 
@@ -76,27 +81,16 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
-        Scanner sc = new Scanner(System.in);
-        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
+        ConsoleCommandManager consoleCommandManager = new ConsoleCommandManager();
+        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
+        Scanner scanner = new Scanner(System.in);
 
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if (!SessionUtil.hasLogin(channel)) {
-                    System.out.println("输入用户名登录: ");
-                    String username = sc.nextLine();
-                    loginRequestPacket.setUsername(username);
-
-                    // 密码使用默认的
-                    loginRequestPacket.setPassword("pwd");
-
-                    // 发送登录数据包
-                    channel.writeAndFlush(loginRequestPacket);
-                    waitForLoginResponse();
+                    loginConsoleCommand.exec(scanner, channel);
                 } else {
-                    System.out.println("Input id message");
-                    String toUserId = sc.next();
-                    String message = sc.next();
-                    channel.writeAndFlush(new MessageRequestPacket(toUserId, message));
+                    consoleCommandManager.exec(scanner, channel);
                 }
             }
         }).start();
