@@ -11,12 +11,14 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import netty_learn.chatapp.client.console.ConsoleCommandManager;
 import netty_learn.chatapp.client.console.LoginConsoleCommand;
 import netty_learn.chatapp.client.handler.CreateGroupResponseHandler;
+import netty_learn.chatapp.client.handler.HeartBeatTimerHandler;
 import netty_learn.chatapp.client.handler.LoginResponseHandler;
 import netty_learn.chatapp.client.handler.LogoutResponseHandler;
 import netty_learn.chatapp.client.handler.MessageResponseHandler;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
+import netty_learn.chatapp.protocol.IMIdleStateHandler;
 import netty_learn.chatapp.util.SessionUtil;
 
 import java.util.Date;
@@ -44,6 +46,7 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
+                        ch.pipeline().addLast(new IMIdleStateHandler());
                         ch.pipeline().addLast(new Splitter());
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
@@ -51,6 +54,7 @@ public class NettyClient {
                         ch.pipeline().addLast(new MessageResponseHandler());
                         ch.pipeline().addLast(new CreateGroupResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
+                        ch.pipeline().addLast(new HeartBeatTimerHandler());
                     }
                 });
 

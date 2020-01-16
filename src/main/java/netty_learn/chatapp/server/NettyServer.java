@@ -9,8 +9,10 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
+import netty_learn.chatapp.protocol.IMIdleStateHandler;
 import netty_learn.chatapp.server.handler.AuthHandler;
 import netty_learn.chatapp.server.handler.CreateGroupRequestHandler;
+import netty_learn.chatapp.server.handler.HeartBeatRequestHandler;
 import netty_learn.chatapp.server.handler.LoginRequestHandler;
 import netty_learn.chatapp.server.handler.LogoutRequestHandler;
 import netty_learn.chatapp.server.handler.MessageRequestHandler;
@@ -32,14 +34,17 @@ public class NettyServer {
                 .childOption(ChannelOption.TCP_NODELAY, true)
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     protected void initChannel(NioSocketChannel ch) {
+                        ch.pipeline().addLast(new IMIdleStateHandler());
                         ch.pipeline().addLast(new Splitter());
                         ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new PacketEncoder());
                         ch.pipeline().addLast(new LoginRequestHandler());
+                        ch.pipeline().addLast(HeartBeatRequestHandler.INSTANCE);
                         ch.pipeline().addLast(new AuthHandler());
                         ch.pipeline().addLast(new MessageRequestHandler());
                         ch.pipeline().addLast(new CreateGroupRequestHandler());
                         ch.pipeline().addLast(new LogoutRequestHandler());
-                        ch.pipeline().addLast(new PacketEncoder());
+
                     }
                 });
 

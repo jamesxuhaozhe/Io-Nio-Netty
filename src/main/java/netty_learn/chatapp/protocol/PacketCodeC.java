@@ -2,9 +2,11 @@ package netty_learn.chatapp.protocol;
 
 import io.netty.buffer.ByteBuf;
 import netty_learn.chatapp.protocol.request.CreateGroupRequestPacket;
+import netty_learn.chatapp.protocol.request.HeartBeatRequestPacket;
 import netty_learn.chatapp.protocol.request.LogoutRequestPacket;
 import netty_learn.chatapp.protocol.request.MessageRequestPacket;
 import netty_learn.chatapp.protocol.response.CreateGroupResponsePacket;
+import netty_learn.chatapp.protocol.response.HeartBeatResponsePacket;
 import netty_learn.chatapp.protocol.response.LogoutResponsePacket;
 import netty_learn.chatapp.protocol.response.MessageResponsePacket;
 import netty_learn.chatapp.protocol.request.LoginRequestPacket;
@@ -17,6 +19,8 @@ import java.util.Map;
 
 import static netty_learn.chatapp.protocol.command.Command.CREATE_GROUP_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.CREATE_GROUP_RESPONSE;
+import static netty_learn.chatapp.protocol.command.Command.HEARTBEAT_REQUEST;
+import static netty_learn.chatapp.protocol.command.Command.HEARTBEAT_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.LOGIN_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.LOGIN_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.LOGOUT_REQUEST;
@@ -43,6 +47,8 @@ public class PacketCodeC {
         packetTypeMap.put(LOGOUT_RESPONSE, LogoutResponsePacket.class);
         packetTypeMap.put(CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
         packetTypeMap.put(CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(HEARTBEAT_REQUEST, HeartBeatRequestPacket.class);
+        packetTypeMap.put(HEARTBEAT_RESPONSE, HeartBeatResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
