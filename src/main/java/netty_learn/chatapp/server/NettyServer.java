@@ -10,12 +10,7 @@ import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
 import netty_learn.chatapp.protocol.IMIdleStateHandler;
-import netty_learn.chatapp.server.handler.AuthHandler;
-import netty_learn.chatapp.server.handler.CreateGroupRequestHandler;
-import netty_learn.chatapp.server.handler.HeartBeatRequestHandler;
-import netty_learn.chatapp.server.handler.LoginRequestHandler;
-import netty_learn.chatapp.server.handler.LogoutRequestHandler;
-import netty_learn.chatapp.server.handler.MessageRequestHandler;
+import netty_learn.chatapp.server.handler.*;
 
 public class NettyServer {
 
@@ -43,6 +38,9 @@ public class NettyServer {
                         ch.pipeline().addLast(new AuthHandler());
                         ch.pipeline().addLast(new MessageRequestHandler());
                         ch.pipeline().addLast(new CreateGroupRequestHandler());
+                        ch.pipeline().addLast(new JoinGroupRequestHandler());
+                        ch.pipeline().addLast(new QuitGroupRequestHandler());
+                        ch.pipeline().addLast(new ListGroupMembersRequestHandler());
                         ch.pipeline().addLast(new LogoutRequestHandler());
 
                     }

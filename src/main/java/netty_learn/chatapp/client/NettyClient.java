@@ -10,11 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import netty_learn.chatapp.client.console.ConsoleCommandManager;
 import netty_learn.chatapp.client.console.LoginConsoleCommand;
-import netty_learn.chatapp.client.handler.CreateGroupResponseHandler;
-import netty_learn.chatapp.client.handler.HeartBeatTimerHandler;
-import netty_learn.chatapp.client.handler.LoginResponseHandler;
-import netty_learn.chatapp.client.handler.LogoutResponseHandler;
-import netty_learn.chatapp.client.handler.MessageResponseHandler;
+import netty_learn.chatapp.client.handler.*;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
@@ -53,6 +49,9 @@ public class NettyClient {
                         ch.pipeline().addLast(new LogoutResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
                         ch.pipeline().addLast(new CreateGroupResponseHandler());
+                        ch.pipeline().addLast(new JoinGroupResponseHandler());
+                        ch.pipeline().addLast(new QuitGroupResponseHandler());
+                        ch.pipeline().addLast(new ListGroupMembersResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                         ch.pipeline().addLast(new HeartBeatTimerHandler());
                     }
