@@ -11,7 +11,6 @@ public class HeartBeatRequestHandler extends SimpleChannelInboundHandler<HeartBe
     public static final HeartBeatRequestHandler INSTANCE = new HeartBeatRequestHandler();
 
     private HeartBeatRequestHandler() {
-
     }
 
     @Override
