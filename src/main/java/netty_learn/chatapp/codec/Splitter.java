@@ -3,7 +3,7 @@ package netty_learn.chatapp.codec;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
-import netty_learn.chatapp.protocol.PacketCodeC;
+import netty_learn.chatapp.protocol.PacketCodec;
 
 public class Splitter extends LengthFieldBasedFrameDecoder {
 
@@ -16,7 +16,7 @@ public class Splitter extends LengthFieldBasedFrameDecoder {
 
     @Override
     protected Object decode(ChannelHandlerContext ctx, ByteBuf in) throws Exception {
-        if (in.getInt(in.readerIndex()) != PacketCodeC.MAGIC_NUMBER) {
+        if (in.getInt(in.readerIndex()) != PacketCodec.MAGIC_NUMBER) {
             ctx.channel().close();
             return null;
         }

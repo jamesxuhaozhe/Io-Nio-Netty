@@ -6,6 +6,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import netty_learn.chatapp.codec.PacketCodecHandler;
 import netty_learn.chatapp.codec.PacketDecoder;
 import netty_learn.chatapp.codec.PacketEncoder;
 import netty_learn.chatapp.codec.Splitter;
@@ -31,18 +32,11 @@ public class NettyServer {
                     protected void initChannel(NioSocketChannel ch) {
                         ch.pipeline().addLast(new IMIdleStateHandler());
                         ch.pipeline().addLast(new Splitter());
-                        ch.pipeline().addLast(new PacketDecoder());
-                        ch.pipeline().addLast(new PacketEncoder());
-                        ch.pipeline().addLast(new LoginRequestHandler());
+                        ch.pipeline().addLast(PacketCodecHandler.INSTANCE);
+                        ch.pipeline().addLast(LoginRequestHandler.INSTANCE);
                         ch.pipeline().addLast(HeartBeatRequestHandler.INSTANCE);
-                        ch.pipeline().addLast(new AuthHandler());
-                        ch.pipeline().addLast(new MessageRequestHandler());
-                        ch.pipeline().addLast(new CreateGroupRequestHandler());
-                        ch.pipeline().addLast(new JoinGroupRequestHandler());
-                        ch.pipeline().addLast(new QuitGroupRequestHandler());
-                        ch.pipeline().addLast(new ListGroupMembersRequestHandler());
-                        ch.pipeline().addLast(new LogoutRequestHandler());
-
+                        ch.pipeline().addLast(AuthHandler.INSTANCE);
+                        ch.pipeline().addLast(IMHandler.INSTANCE);
                     }
                 });
 

@@ -1,5 +1,6 @@
 package netty_learn.chatapp.server.handler;
 
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.group.ChannelGroup;
@@ -7,7 +8,15 @@ import netty_learn.chatapp.protocol.request.QuitGroupRequestPacket;
 import netty_learn.chatapp.protocol.response.QuitGroupResponsePacket;
 import netty_learn.chatapp.util.SessionUtil;
 
+@ChannelHandler.Sharable
 public class QuitGroupRequestHandler extends SimpleChannelInboundHandler<QuitGroupRequestPacket> {
+
+    public static final QuitGroupRequestHandler INSTANCE = new QuitGroupRequestHandler();
+
+    private QuitGroupRequestHandler() {
+    }
+
+
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, QuitGroupRequestPacket requestPacket) {
         // 1. 获取群对应的 channelGroup，然后将当前用户的 channel 移除
