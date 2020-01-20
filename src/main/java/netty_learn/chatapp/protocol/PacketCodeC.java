@@ -2,31 +2,39 @@ package netty_learn.chatapp.protocol;
 
 import io.netty.buffer.ByteBuf;
 import netty_learn.chatapp.protocol.request.CreateGroupRequestPacket;
-import netty_learn.chatapp.protocol.request.HeartBeatRequestPacket;
+import netty_learn.chatapp.protocol.request.JoinGroupRequestPacket;
+import netty_learn.chatapp.protocol.request.ListGroupMembersRequestPacket;
+import netty_learn.chatapp.protocol.request.LoginRequestPacket;
 import netty_learn.chatapp.protocol.request.LogoutRequestPacket;
 import netty_learn.chatapp.protocol.request.MessageRequestPacket;
+import netty_learn.chatapp.protocol.request.QuitGroupRequestPacket;
 import netty_learn.chatapp.protocol.response.CreateGroupResponsePacket;
-import netty_learn.chatapp.protocol.response.HeartBeatResponsePacket;
+import netty_learn.chatapp.protocol.response.JoinGroupResponsePacket;
+import netty_learn.chatapp.protocol.response.ListGroupMembersResponsePacket;
+import netty_learn.chatapp.protocol.response.LoginResponsePacket;
 import netty_learn.chatapp.protocol.response.LogoutResponsePacket;
 import netty_learn.chatapp.protocol.response.MessageResponsePacket;
-import netty_learn.chatapp.protocol.request.LoginRequestPacket;
-import netty_learn.chatapp.protocol.response.LoginResponsePacket;
-import netty_learn.chatapp.serialize.impl.JSONSerializer;
+import netty_learn.chatapp.protocol.response.QuitGroupResponsePacket;
 import netty_learn.chatapp.serialize.Serializer;
+import netty_learn.chatapp.serialize.impl.JSONSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static netty_learn.chatapp.protocol.command.Command.CREATE_GROUP_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.CREATE_GROUP_RESPONSE;
-import static netty_learn.chatapp.protocol.command.Command.HEARTBEAT_REQUEST;
-import static netty_learn.chatapp.protocol.command.Command.HEARTBEAT_RESPONSE;
+import static netty_learn.chatapp.protocol.command.Command.JOIN_GROUP_REQUEST;
+import static netty_learn.chatapp.protocol.command.Command.JOIN_GROUP_RESPONSE;
+import static netty_learn.chatapp.protocol.command.Command.LIST_GROUP_MEMBERS_REQUEST;
+import static netty_learn.chatapp.protocol.command.Command.LIST_GROUP_MEMBERS_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.LOGIN_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.LOGIN_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.LOGOUT_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.LOGOUT_RESPONSE;
 import static netty_learn.chatapp.protocol.command.Command.MESSAGE_REQUEST;
 import static netty_learn.chatapp.protocol.command.Command.MESSAGE_RESPONSE;
+import static netty_learn.chatapp.protocol.command.Command.QUIT_GROUP_REQUEST;
+import static netty_learn.chatapp.protocol.command.Command.QUIT_GROUP_RESPONSE;
 
 public class PacketCodeC {
 
@@ -47,8 +55,12 @@ public class PacketCodeC {
         packetTypeMap.put(LOGOUT_RESPONSE, LogoutResponsePacket.class);
         packetTypeMap.put(CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
         packetTypeMap.put(CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
-        packetTypeMap.put(HEARTBEAT_REQUEST, HeartBeatRequestPacket.class);
-        packetTypeMap.put(HEARTBEAT_RESPONSE, HeartBeatResponsePacket.class);
+        packetTypeMap.put(JOIN_GROUP_REQUEST, JoinGroupRequestPacket.class);
+        packetTypeMap.put(JOIN_GROUP_RESPONSE, JoinGroupResponsePacket.class);
+        packetTypeMap.put(QUIT_GROUP_REQUEST, QuitGroupRequestPacket.class);
+        packetTypeMap.put(QUIT_GROUP_RESPONSE, QuitGroupResponsePacket.class);
+        packetTypeMap.put(LIST_GROUP_MEMBERS_REQUEST, ListGroupMembersRequestPacket.class);
+        packetTypeMap.put(LIST_GROUP_MEMBERS_RESPONSE, ListGroupMembersResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();
