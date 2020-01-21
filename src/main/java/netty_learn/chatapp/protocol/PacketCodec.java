@@ -19,7 +19,6 @@ public class PacketCodec {
     private final Map<Byte, Class<? extends Packet>> packetTypeMap;
     private final Map<Byte, Serializer> serializerMap;
 
-
     private PacketCodec() {
         packetTypeMap = new HashMap<>();
         packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.class);
@@ -58,7 +57,6 @@ public class PacketCodec {
         byteBuf.writeInt(bytes.length);
         byteBuf.writeBytes(bytes);
     }
-
 
     public Packet decode(ByteBuf byteBuf) {
         // 跳过 magic number
